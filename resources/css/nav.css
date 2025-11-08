@@ -1,0 +1,74 @@
+.main_nav{
+    width: 100%;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #0000001f;
+}
+.nav_search{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #F9F9F9;
+    padding: 0 20px;
+    gap: 10px;
+    border-radius: 15px;
+}
+.input_search{
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: #F9F9F9;
+    padding: 0 10px;
+    font-size: 15px;
+}
+.input_search:focus {
+  outline: none; /* убирает чёрную обводку */
+}
+.search_icon{
+    cursor: pointer;
+}
+.main_logo{
+    width: 12%;
+    cursor: pointer;
+}
+.nav_panel{
+    width: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.account{
+    width: 110px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-radius: 15px;
+    border: 2px solid #FE5F00;
+    color: #FE5F00;
+    font-size: 15px;
+    cursor: pointer;
+}
+.basket{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 15px;
+    border: 2px solid #FE5F00;
+    color: #FE5F00;
+    cursor: pointer;
+}
+.account_logo{
+    width: 13px;
+}
+a{
+    text-decoration: none;
+    color: #FE5F00;
+}

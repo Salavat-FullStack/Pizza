@@ -1,0 +1,26 @@
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: [
+                'resources/css/nav.css',
+                'resources/css/filtr.block.css',
+                'resources/css/main.css',
+                'resources/css/product_block_card.css',
+                'resources/css/pizza.css',
+                'resources/css/auth/register.css',
+                'resources/css/auth/login.css',
+                'resources/js/nav.js', 
+                'resources/js/pizza.js', 
+                'resources/js/filter.block.js',
+                'resources/js/sorting.js',
+                'resources/js/product_block_card.js',
+                'resources/js/auth/register.js',
+                'resources/js/auth/login.js',
+            ],
+            refresh: true,
+        }),
+    ],
+});
