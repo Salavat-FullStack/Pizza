@@ -101,20 +101,5 @@ async function setSessionPizza(pizza) {
     form.submit();
 }
 
-// async function getSessionPizza() {
-//     const response = await fetch("http://localhost/my-pet-project/public/getSessionPizza", {
-//         method: "GET",
-//         credentials: "include" 
-//     });
-
-//     console.log('ответ от запроса GET = ', response);
-
-//     if(response.ok){
-//         const pizzaData = await response.json();
-//         console.log(pizzaData.pizza);
-//     }else{
-//         console.error('Ошибка при получении данных сессии:', response.statusText);
-//     }
-// }
 
 });

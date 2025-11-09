@@ -10,6 +10,7 @@
         'resources/css/pizza.css',
         'resources/js/nav.js',
         'resources/js/pizza.js',
+        'resources/js/shope.js',
     ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

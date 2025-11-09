@@ -149,41 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
-
     }
 
-    const addShope = document.querySelector('.btn_add_shope');
-    console.log(addShope);
-
-    addShope.addEventListener('click',()=>{
-        console.log('click');
-        const token = localStorage.getItem('authToken');
-
-        fetch('http://127.0.0.1:8000/me', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(pizzaDataLocal)
-            })
-            .then(async response => {
-                const data = await response.json();
-
-                if (!response.ok) { // если статус не 200-299
-                    console.error('Ошибка сервера:', data);
-                    alert(data.message || 'Ошибка регистрации');
-                    return;
-                }
-
-                console.log('Ответ сервера:', data);
-
-                // if (data.token) { 
-                //     localStorage.setItem('authToken', data.token);
-                // }
-            })
-            .catch(err => console.error('Ошибка:', err));
-    });
+    window.returnData = function() {
+        return pizzaDataLocal;
+    }
 
 });
