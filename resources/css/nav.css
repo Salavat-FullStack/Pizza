@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px solid #0000001f;
+    font-family: "Pacifico", cursive;
 }
 .nav_search{
     width: 70%;
@@ -53,6 +54,7 @@
     color: #FE5F00;
     font-size: 15px;
     cursor: pointer;
+
 }
 .basket{
     height: 50px;
@@ -64,11 +66,27 @@
     border: 2px solid #FE5F00;
     color: #FE5F00;
     cursor: pointer;
+    position: relative;
+}
+.basket_length{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -14px;
+    padding: 0 9px;
+    background-color: #ff7d2f;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3px;
+    left: 34px;
 }
 .account_logo{
     width: 13px;
 }
-a{
+.auth_btn{
     text-decoration: none;
     color: #FE5F00;
+    font-family: "Pacifico", cursive;
 }

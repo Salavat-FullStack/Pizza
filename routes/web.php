@@ -17,4 +17,8 @@ Route::get('/login',function () {
     return view('auth.login');
 })->name('login');
 
+Route::get('/registr-pizza',function () {
+    return view('registr_pizza');
+})->name('registr-pizza');
+
 // Route::get('/', );
