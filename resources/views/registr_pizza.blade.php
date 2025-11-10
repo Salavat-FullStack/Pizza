@@ -20,7 +20,7 @@
 </head>
 <body>
     <div class="main_container">
-        @include('partials.nav')
+        @include('partials.nav', ['type' => 'register_pizza'])
     </div>
 </body>
 </html>

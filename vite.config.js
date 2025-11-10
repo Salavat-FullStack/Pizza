@@ -20,7 +20,8 @@ export default defineConfig({
                 'resources/js/auth/register.js',
                 'resources/js/auth/login.js',
                 'resources/js/shope.js',
-                'resources/js/registr_pizza.js'
+                'resources/js/registr_pizza.js',
+                'resources/js/shope_function.js'
             ],
             refresh: true,
         }),

@@ -11,6 +11,7 @@
         'resources/js/nav.js',
         'resources/js/pizza.js',
         'resources/js/shope.js',
+        'resources/js/shope_function.js'
     ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,7 @@
 </head>
 <body>
     <div class="main_container">
-        @include('partials.nav')
+        @include('partials.nav', ['type' => 'default'])
         
         <div class="pizza_container">
             <div class="pizza_image"><img src="{{ asset($pizza['image']) }}" alt="image"></div>

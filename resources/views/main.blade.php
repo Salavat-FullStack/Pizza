@@ -13,16 +13,19 @@
         'resources/css/product_block_card.css',
         'resources/js/filter.block.js',
         'resources/js/sorting.js',
-        'resources/js/product_block_card.js'
+        'resources/js/product_block_card.js',
+        'resources/js/shope.js',
     ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <title>Next Pizza</title>
 </head>
 <body>
     <div class="main_container">
-        @include('partials.nav')
+        @include('partials.nav', ['type' => 'default'])
         @include('partials.filtr')
         @include('partials.product_block')
     </div>
