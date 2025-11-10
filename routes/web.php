@@ -17,8 +17,12 @@ Route::get('/login',function () {
     return view('auth.login');
 })->name('login');
 
-Route::get('/registr-pizza',function () {
+// Route::get('/registr-pizza',function () {
+//     return view('registr_pizza');
+// })->name('registr-pizza');
+
+Route::get('/registr-pizza', function () {
     return view('registr_pizza');
-})->name('registr-pizza');
+})->middleware('check.auth.token')->name('registr-pizza');
 
 // Route::get('/', );
