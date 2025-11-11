@@ -13,8 +13,11 @@ class CheckAuthToken
     {
         $token = $request->cookie('authToken');
 
+        dd($request);
+        dd($token);
+
         if (!$token) {
-            return redirect('/login');
+            // return redirect('/login');
         }
 
         $response = Http::withHeaders([

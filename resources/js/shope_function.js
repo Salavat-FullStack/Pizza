@@ -23,6 +23,7 @@ export function addShope(token, pizzaData){
 }
 
 export async function allShope(token = localStorage.getItem('authToken')) {
+    console.log('function allShope token = ', token);
     try {
         const response = await fetch('http://127.0.0.1:8000/api/all-shope', {
             method: 'POST',
@@ -30,7 +31,8 @@ export async function allShope(token = localStorage.getItem('authToken')) {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'Authorization': `Bearer ${token}`
-            }
+            },
+            credentials: 'include'
         });
 
         const data = await response.json();

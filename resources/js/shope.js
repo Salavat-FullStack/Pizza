@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     let token = localStorage.getItem('authToken');
 
+    console.log(token);
+
     const pizzaData = await allShope(token);
 
     console.log('shope allShope result', pizzaData);

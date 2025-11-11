@@ -21,8 +21,14 @@ Route::get('/login',function () {
 //     return view('registr_pizza');
 // })->name('registr-pizza');
 
-Route::get('/registr-pizza', function () {
-    return view('registr_pizza');
-})->middleware('check.auth.token')->name('registr-pizza');
+// Route::get('/registr-pizza', function () {
+//     return view('registr_pizza');
+// })->middleware('check.auth.token')->name('registr-pizza');
+
+Route::middleware('check.auth.token')->group(function () {
+    Route::get('/registr-pizza', function () {
+        return view('registr_pizza');
+    })->name('registr-pizza');
+});
 
 // Route::get('/', );
