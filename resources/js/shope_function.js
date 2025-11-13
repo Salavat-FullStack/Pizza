@@ -4,8 +4,9 @@ export function addShope(token, pizzaData){
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
+                // 'Authorization': `Bearer ${token}`
             },
+            credentials: 'include',
             body: JSON.stringify({ pizzaData: pizzaData })
         })
         .then(async response => {
@@ -17,20 +18,19 @@ export function addShope(token, pizzaData){
                 return;
             }
             console.log('Ответ сервера на добовление корзины:', data);
-            allShope(token);
+            allShope();
         })
         .catch(err => console.error('Ошибка:', err));
 }
 
-export async function allShope(token = localStorage.getItem('authToken')) {
-    console.log('function allShope token = ', token);
+export async function allShope() {
+    // console.log('function allShope token = ', token);
     try {
         const response = await fetch('http://127.0.0.1:8000/api/all-shope', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
             },
             credentials: 'include'
         });
@@ -53,6 +53,36 @@ export async function allShope(token = localStorage.getItem('authToken')) {
         console.error('Ошибка:', err);
     }
 }
+
+export async function loginUser(formData) {
+    try {
+        const response = await fetch('http://127.0.0.1:8000/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.error('Ошибка сервера:', data);
+            alert(data.message || 'Ошибка авторизации');
+            return;
+        }
+
+        // Отправляем полученные данные (user + token) на монолит
+        await fetch('http://127.0.0.1:8001/set-cookie', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include', // важно для установки cookie
+            body: JSON.stringify({ token: data.token })
+        });
+
+    } catch (err) {
+        console.error('Ошибка:', err);
+    }
+}
+
 
 export async function returnDataLength(data){
     console.log(data.length);

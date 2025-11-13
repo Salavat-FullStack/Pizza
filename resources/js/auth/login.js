@@ -1,3 +1,5 @@
+import { loginUser } from "../shope_function";
+
 document.addEventListener('DOMContentLoaded', () => {
     const btnForm = document.querySelector('.btn_form');
     const inputBox = document.querySelectorAll('.register_input_box');
@@ -21,31 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             formData.token = token;
         }
-        fetch('http://127.0.0.1:8000/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            credentials: 'include',
-            body: JSON.stringify(formData)
-        })
-        .then(async response => {
-            const data = await response.json();
-
-            if (!response.ok) { 
-                console.error('Ошибка сервера:', data);
-                alert(data.message || 'Ошибка регистрации');
-                return;
-            }
-
-            console.log('Ответ сервера:', data);
-
-            if (data.token) { 
-                localStorage.setItem('authToken', data.token);
-            }
-        })
-        .catch(err => console.error('Ошибка:', err));
+        
+        loginUser(formData);
     });
 
 

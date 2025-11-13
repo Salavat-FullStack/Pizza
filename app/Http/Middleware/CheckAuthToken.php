@@ -13,13 +13,11 @@ class CheckAuthToken
     {
         $token = $request->cookie('authToken');
 
-        dd($request);
-        dd($token);
-
         if (!$token) {
-            // return redirect('/login');
+            return redirect('/login');
         }
 
+        // Отправляем токен на микросервис для проверки
         $response = Http::withHeaders([
             'Authorization' => "Bearer {$token}"
         ])->post('http://127.0.0.1:8000/me');
