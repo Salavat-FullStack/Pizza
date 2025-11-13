@@ -17,15 +17,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const pizzaData = returnData();
             console.log(pizzaData);
 
-            token = localStorage.getItem('authToken');
-
             fetch('http://127.0.0.1:8000/me', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'Authorization': `Bearer ${token}`
                     },
+                    credentials: 'include',
                 })
             .then(async response => {
                 const data = await response.json();
@@ -38,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 console.log('Ответ сервера:', data);
 
-                addShope(token);
+                addShope();
             })
             .catch(err => console.error('Ошибка:', err));
         });
