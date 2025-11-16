@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\PizzaController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\RegisterPizzaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index']);
@@ -24,8 +25,13 @@ Route::post('/set-cookie', function (\Illuminate\Http\Request $request) {
         ->cookie('authToken', $token, 60 * 24 * 30, '/', null, false, true);
 });
 
+// Route::middleware('check.auth.token')->group(function () {
+//     Route::get('/registr-pizza', function () {
+//         return view('registr_pizza');
+//     })->name('registr-pizza');
+// });
+
 Route::middleware('check.auth.token')->group(function () {
-    Route::get('/registr-pizza', function () {
-        return view('registr_pizza');
-    })->name('registr-pizza');
+    Route::get('/registr-pizza', [RegisterPizzaController::class, 'returnView'])->name('registr-pizza');
 });
+
