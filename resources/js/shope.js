@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 console.log('Ответ сервера:', data);
 
-                addShope();
+                addShope(pizzaData);
             })
             .catch(err => console.error('Ошибка:', err));
         });

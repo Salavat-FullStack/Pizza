@@ -1,0 +1,54 @@
+*{
+    font-family: "Nunito", sans-serif;
+}
+
+.basket_card{
+    width: 750px;
+    display: flex;
+    margin-top: 25px;
+}
+.main_title{
+    font-weight: 800;
+    font-size: 35px;
+}
+.registr_pizza_block{
+    width: 750px;
+}
+.card_img img{
+    width: 65px;
+}
+.card_title{
+    font-weight: 700;
+}
+.card_description{
+    font-size: 14px;
+    font-weight: 400;
+    color: #A1A1A1;
+}
+.card_inform{
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.basket_contain_panel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #0000001f;
+}
+.btn_clear_basket{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.btn_clear_basket img{
+    width: 14px;
+    height: 14px;
+}
+
+.basket_contain{
+    padding: 35px;
+    border: 1px solid #0000001f;
+    border-radius: 30px;
+}

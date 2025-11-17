@@ -12,6 +12,7 @@ export default defineConfig({
                 'resources/css/pizza.css',
                 'resources/css/auth/register.css',
                 'resources/css/auth/login.css',
+                'resources/css/registr_pizza.css',
                 'resources/js/nav.js', 
                 'resources/js/pizza.js', 
                 'resources/js/filter.block.js',

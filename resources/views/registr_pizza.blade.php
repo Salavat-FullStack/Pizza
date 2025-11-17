@@ -9,12 +9,13 @@
         'resources/js/nav.js',
         'resources/css/main.css',
         'resources/css/product_block_card.css',
+        'resources/css/registr_pizza.css',
         'resources/js/shope.js',
         'resources/js/registr_pizza.js',
     ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     
     <title>Оформление заказа</title>
 </head>
@@ -22,7 +23,7 @@
 
     <div class="main_container">
         @include('partials.nav', ['type' => 'register_pizza'])
-        <h2>Оформление заказа</h2>
+        <h2 class="main_title">Оформление заказа</h2>
         <div class="registr_pizza_block">
 
             <div class="basket_contain">
@@ -38,18 +39,18 @@
 
                         @php
                             $thickness = $item['finelThicknesses']['thickness'] . ' тесто';
-                            $size = $item['size']['name'] . ' ' . $item['size']['cm'];
+                            $size = $item['size']['name'] . ' ' . $item['size']['cm'] . ' cm' . ', ';
+                            $description = $size . $thickness;
                         @endphp
 
                         <div class="basket_card">
                             <div class="card_img">
-                                <img src="{{ asset($item['image']) }}" alt="">
-                                <p>{{ $item['image'] }}</p>
+                                <img src="{{ asset($item['image']) }}" alt="image-pizza">
                             </div>
                             
                             <div class="card_inform">
                                 <div class="card_title">{{ $item['name'] }}</div>
-                                <div class="card_description"></div>
+                                <div class="card_description">{{ $description }}</div>
                             </div>
                         </div>
 

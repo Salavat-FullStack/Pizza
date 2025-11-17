@@ -1,4 +1,4 @@
-export function addShope(token, pizzaData){
+export function addShope(pizzaData){
         fetch('http://127.0.0.1:8000/api/add-shope', {
             method: 'POST',
             headers: {
@@ -17,6 +17,7 @@ export function addShope(token, pizzaData){
                 alert(data.message || 'Ошибка регистрации');
                 return;
             }
+
             console.log('Ответ сервера на добовление корзины:', data);
             allShope();
         })
