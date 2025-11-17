@@ -17,6 +17,8 @@ class RegisterPizzaController extends Controller
             return json_decode($item, true);
         }, $data);
 
+        dd($decodedData);
+
         return view('registr_pizza', ['data' => $decodedData]);
     }
 }

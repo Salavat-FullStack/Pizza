@@ -19,6 +19,7 @@
     <title>Оформление заказа</title>
 </head>
 <body>
+
     <div class="main_container">
         @include('partials.nav', ['type' => 'register_pizza'])
         <h2>Оформление заказа</h2>
@@ -33,9 +34,26 @@
                     </div>
                 </div>
                 <div class="basket_block">
-                    <div class="basket_card">
+                    @foreach ($data as $item)
 
-                    </div>
+                        @php
+                            $thickness = $item['finelThicknesses']['thickness'] . ' тесто';
+                            $size = $item['size']['name'] . ' ' . $item['size']['cm'];
+                        @endphp
+
+                        <div class="basket_card">
+                            <div class="card_img">
+                                <img src="{{ asset($item['image']) }}" alt="">
+                                <p>{{ $item['image'] }}</p>
+                            </div>
+                            
+                            <div class="card_inform">
+                                <div class="card_title">{{ $item['name'] }}</div>
+                                <div class="card_description"></div>
+                            </div>
+                        </div>
+
+                    @endforeach
                 </div>
             </div>
 
