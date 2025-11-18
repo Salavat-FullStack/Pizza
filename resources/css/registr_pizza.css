@@ -1,6 +1,10 @@
 *{
     font-family: "Nunito", sans-serif;
 }
+.main_container{
+    width: 72%;
+    padding-bottom: 65px;
+}
 
 .main_container h2{
     margin-top: 50px;
@@ -137,4 +141,72 @@
 }
 .address_time{
     margin-top: 25px;
+}
+
+
+/*        total_contain          */
+
+.total_contain{
+    width: 450px;
+    height: 480px;
+    position: absolute;
+    top: 320px;
+    right: 19%;
+    border: 1px solid #0000001f;
+    padding: 40px 45px;
+    border-radius: 30px;
+}
+.total_inform p{
+    font-size: 22px;
+}
+.total_inform h3{
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+.check_inform{
+    border-top: 1px solid #0000001f;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid #0000001f;
+    padding-bottom: 30px;
+}
+.check_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item_title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.check_icon{
+    margin-top: 5px;
+}
+.promokod{
+    font-size: 18px;
+    font-weight: 400;
+    color: #777777;
+    margin-top: 20px;
+}
+.payment_btn{
+    width: 100%;
+    height: 60px;
+    background-color: #FE5F00;
+    border-radius: 15px;
+    color: white;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+}
+.check_price{
+    font-size: 18px;
+    font-weight: 700;
+}
+.account{
+    margin: 0;
 }

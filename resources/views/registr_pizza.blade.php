@@ -35,12 +35,21 @@
                     </div>
                 </div>
                 <div class="basket_block">
+                    @php
+                        $productPrice = 0;
+                        $finelPrice = 0;
+                        $tax = 0;
+                        $addresPrice = 200;
+                    @endphp
                     @foreach ($data as $item)
 
                         @php
                             $thickness = $item['finelThicknesses']['thickness'] . ' тесто';
                             $size = $item['size']['name'] . ' ' . $item['size']['cm'] . ' cm' . ', ';
                             $description = $size . $thickness;
+                            $productPrice += $item['finelPrice'];
+                            $tax = round($productPrice / 10);
+                            $finelPrice = $productPrice + $tax + $addresPrice;
                         @endphp
 
                         <div class="basket_card">
@@ -133,33 +142,43 @@
             <div class="total_contain">
                 <div class="total_inform">
                     <p>Итого:</p>
-                    <h3>{{ $data[0]['price'] }}</h3>
+                    <h3>{{ $finelPrice }} ₽</h3>
                     <div class="check_inform">
                         <div class="check_item">
                             <div class="item_title">
                                 <div class="check_icon"><img src="{{ asset('images/icons/check_price.png') }}" alt=""></div>
                                 Стоимость товаров:
                             </div>
-                            <div class="check_price">2005 ₽</div>
+                            <div class="check_price finel_price_value">{{ $productPrice }} ₽</div>
                         </div>
                         <div class="check_item">
                             <div class="item_title">
                                 <div class="check_icon"><img src="{{ asset('images/icons/ckeck_tax.png') }}" alt=""></div>
                                 Налоги:
                             </div>
-                            <div class="check_price">2005 ₽</div>
+                            <div class="check_price tax_value">{{ $tax }} ₽</div>
                         </div>
                         <div class="check_item">
                             <div class="item_title">
                                 <div class="check_icon"><img src="{{ asset('images/icons/ckeck_delivery.png') }}" alt=""></div>
                                 Доставка:
                             </div>
-                            <div class="check_price">2005 ₽</div>
+                            <div class="check_price address_value">{{ $addresPrice }} ₽</div>
                         </div>
                     </div>
+
+                    <div class="promokod">
+                        У меня есть промокод
+                    </div>
+
+                    <button class="payment_btn">Перейти к оплате</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        window.registerPizzaData = @json($data);
+    </script>
 </body>
 </html>
