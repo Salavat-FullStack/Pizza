@@ -2,10 +2,14 @@
     font-family: "Nunito", sans-serif;
 }
 
+.main_container h2{
+    margin-top: 50px;
+}
+
 .basket_card{
-    width: 750px;
     display: flex;
     margin-top: 25px;
+    /* justify-content: space-between; */
 }
 .main_title{
     font-weight: 800;
@@ -13,6 +17,7 @@
 }
 .registr_pizza_block{
     width: 750px;
+    margin-top: 45px;
 }
 .card_img img{
     width: 65px;
@@ -51,4 +56,85 @@
     padding: 35px;
     border: 1px solid #0000001f;
     border-radius: 30px;
+}
+
+.card_panel{
+    display: flex;
+    position: relative;
+    left: 290px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.card_price{
+    position: relative;
+    left: 150px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.card_minus .card_plus{
+    cursor: pointer;
+}
+.card_panel img{
+    width: 15px;
+}
+
+
+/*      person_inform_contain        */
+
+.person_inform_contain{
+    padding: 35px;
+    border: 1px solid #0000001f;
+    border-radius: 30px;
+    margin-top: 45px;
+}
+.input_form {
+    width: 328px;
+}
+.input_form input{
+    width: 328px;
+    height: 48px;
+    border: 1px solid #0000001f;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+.form_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+    margin-top: 30px;
+}
+.input_form p{
+    margin-bottom: 5px;
+    font-weight: 700;
+} 
+
+
+/*     address_contain      */
+
+.address_contain{
+    width: 750px;
+    padding: 35px;
+    border: 1px solid #0000001f;
+    border-radius: 30px;
+    margin-top: 45px;
+}
+.address_form {
+    display: flex;
+    margin-top: 25px;
+    gap: 20px;
+    flex-direction: column;
+}
+.address_form .input_form{
+    width: 100%;
+}
+.address_form .input_form input{
+    width: 100%;
+}
+#address_comment{
+    height: 120px;
+}
+.address_time{
+    margin-top: 25px;
 }

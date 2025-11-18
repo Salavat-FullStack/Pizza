@@ -52,6 +52,22 @@
                                 <div class="card_title">{{ $item['name'] }}</div>
                                 <div class="card_description">{{ $description }}</div>
                             </div>
+
+                            <div class="card_price">
+                                {{ $item['finelPrice'] }} ₽ 
+                            </div>
+
+                            <div class="card_panel">
+                                <div class="card_minus">
+                                    <img src="{{ asset('images/icons/minus.png') }}" alt="minus">
+                                </div>
+                                <div class="card_quantity">
+                                    {{ $item['quantity'] }}
+                                </div>
+                                <div class="card_plus">
+                                    <img src="{{ asset('images/icons/plus.png') }}" alt="plus">
+                                </div>
+                            </div>
                         </div>
 
                     @endforeach
@@ -59,16 +75,60 @@
             </div>
 
             <div class="person_inform_contain">
+
                 <div class="basket_contain_panel">
                     <h3>2. Персональная информация</h3>
                 </div>
+
+                <div class="form_container">
+                    <div class="input_form input_name">
+                        <p>Имя</p>
+                        <input type="text" id="basket_name">
+                    </div>
+                    <div class="input_form input_surname">
+                        <p>Фамилия</p>
+                        <input type="text" id="basket_surname">
+                    </div>
+                    <div class="input_form input_mail">
+                        <p>E-Mail</p>
+                        <input type="text" id="basket_mail">
+                    </div>
+                    <div class="input_form input_telephone">
+                        <p>Телефон</p>
+                        <input type="tel" id="basket_telephone">
+                    </div>
+                </div>
+
             </div>
 
             <div class="address_contain">
+
                 <div class="basket_contain_panel">
                     <h3>3. Адрес доставки</h3>
                 </div>
+
+                <div class="address_content">
+                    <div class="address_form">
+                        <div class="input_form input_adress">
+                            <p>Введите адрес</p>
+                            <input type="text" id="address">
+                        </div>
+                        <div class="input_form input_comment">
+                            <p>Комментарий к заказу</p>
+                            <input type="text" id="address_comment">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="address_time">
+                    <div class="input_form input_adress">
+                        <p>Время доставки</p>
+                        <input type="text" id="addres_input" placeholder="00:00">
+                    </div>
+                </div>
+
             </div>
+
 
             <div class="total_contain">
                 <div class="total_inform">
