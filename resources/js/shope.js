@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const pizzaData = returnData();
             console.log(pizzaData);
 
-            fetch('http://127.0.0.1:8000/me', {
+            fetch('http://127.0.0.1:8000/api/me', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

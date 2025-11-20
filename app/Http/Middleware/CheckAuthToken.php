@@ -20,7 +20,7 @@ class CheckAuthToken
         // Отправляем токен на микросервис для проверки
         $response = Http::withHeaders([
             'Authorization' => "Bearer {$token}"
-        ])->post('http://127.0.0.1:8000/me');
+        ])->post('http://127.0.0.1:8000/api/me');
 
         if ($response->status() !== 200) {
             return redirect('/login');
