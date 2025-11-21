@@ -1,4 +1,11 @@
+
+
 @if ($type == 'default')
+    {{-- {{ request()->attributes->get('user')['name'] }} --}}
+
+    @php
+        dd($loggedUser['name'] )
+    @endphp
     <nav class="main_nav">
         <img class="main_logo" src="{{ asset('images/logo.png') }}" alt="Логотип">
         <div class="nav_search">

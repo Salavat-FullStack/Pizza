@@ -26,6 +26,19 @@ class CheckAuthToken
             return redirect('/login');
         }
 
+        // $request->attributes->set('isLogged', true);
+        // $request->attributes->set('user', $response->json('user'));
+
+        // $request->merge([
+        //     'user' =>  $response->json('user'),
+        //     'isLogged' => true,
+        // ]);
+
+        // dd($response->json('user'));
+
+        view()->share('loggedUser', $response->json('user'));
+        view()->share('isLogged', true);
+
         return $next($request);
     }
 }
