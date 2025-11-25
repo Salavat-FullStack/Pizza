@@ -111,7 +111,13 @@ class PizzaController extends Controller
         //     'redirect_url' => url('/pizza/view')
         // ]);
 
-        return view('pizza.view', compact('pizza'));
+        if($request->cookie('authToken')){
+            $loggedUser = true;
+        }else{
+            $loggedUser = false;
+        }
+
+        return view('pizza.view', compact('pizza'), ['loggedUser' => $loggedUser]);
     }
 
 

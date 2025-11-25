@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 console.log('Ответ сервера:', data);
 
+                // document.cookie = "authToken=123456; path=/; max-age=2592000";
+
                 addShope(pizzaData);
             })
             .catch(err => console.error('Ошибка:', err));

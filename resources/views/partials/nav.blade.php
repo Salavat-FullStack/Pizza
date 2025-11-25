@@ -1,7 +1,7 @@
 @php
     if($loggedUser){
         $loginValue = 'Профиль';
-        $route = 'registr-pizza';
+        $route = 'profile';
     }else{
         $loginValue = 'Войти';
         $route = 'register';
