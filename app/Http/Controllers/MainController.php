@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $filter = Filter::all()->toArray();
         $sorting = Sorting::all()->toArray();
 
@@ -41,10 +41,17 @@ class MainController extends Controller
             }
         }
 
+        if($request->cookie('authToken')){
+            $loggedUser = true;
+        }else{
+            $loggedUser = false;
+        }
+
         return view('main', [
             'filter' => $filter,
             'sorting' => $sorting,
-            'pizzas' => $pizzas
+            'pizzas' => $pizzas,
+            'loggedUser' => $loggedUser
         ]);
     }
 }

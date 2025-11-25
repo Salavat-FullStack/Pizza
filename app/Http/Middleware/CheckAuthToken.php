@@ -36,8 +36,8 @@ class CheckAuthToken
 
         // dd($response->json('user'));
 
-        view()->share('loggedUser', $response->json('user'));
-        view()->share('isLogged', true);
+        // view()->share('loggedUser', $response->json('user'));
+        // view()->share('isLogged', true);
 
         return $next($request);
     }

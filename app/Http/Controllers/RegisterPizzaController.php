@@ -19,6 +19,15 @@ class RegisterPizzaController extends Controller
 
         // dd($decodedData);
 
-        return view('registr_pizza', ['data' => $decodedData]);
+        if($request->cookie('authToken')){
+            $loggedUser = true;
+        }else{
+            $loggedUser = false;
+        }
+
+        return view('registr_pizza', [
+            'data' => $decodedData,
+            'loggedUser' => $loggedUser
+        ]);
     }
 }

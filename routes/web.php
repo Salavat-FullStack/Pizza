@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\PizzaController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterPizzaController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::get('/login',function () {
 
 Route::post('/set-cookie', function (\Illuminate\Http\Request $request) {
     $token = $request->input('token');
+    $user = $request->input('user');
 
     return response()->json(['message' => 'Cookie установлена'])
         ->cookie('authToken', $token, 60 * 24 * 30, '/', null, false, true);
@@ -33,5 +35,5 @@ Route::post('/set-cookie', function (\Illuminate\Http\Request $request) {
 
 Route::middleware('check.auth.token')->group(function () {
     Route::get('/registr-pizza', [RegisterPizzaController::class, 'returnView'])->name('registr-pizza');
+    Route::get('/profile', [ProfileController::class, 'render'])->name('profile');
 });
-
