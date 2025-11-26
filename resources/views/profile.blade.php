@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
     @vite([
         'resources/js/profile/profile.js',
         'resources/js/nav.js',
@@ -21,6 +22,13 @@
 <body>
     <div class="main_container">
         @include('partials.nav', ['type' => 'register_pizza'])
+
+            {{-- @csrf --}}
+
+        <div class="form_avatar">
+            <input type="file" name="avatar" id="avatar">
+            <button id="avatarFormBtn">Загрузить</button>
+        </div>
     </div>
 </body>
 </html>

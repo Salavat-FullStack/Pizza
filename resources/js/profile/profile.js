@@ -20,4 +20,36 @@ document.addEventListener('DOMContentLoaded', () =>{
         // document.cookie = "authToken=123456; path=/; max-age=2592000";
     })
     .catch(err => console.error('Ошибка:', err));
+
+    const avatarFormBtn = document.getElementById('avatarFormBtn');
+
+    document.getElementById('avatarFormBtn').addEventListener('click', async (e) => {
+        e.preventDefault();
+
+        const fileInput = document.getElementById('avatar');
+
+        console.log(fileInput);
+
+        const formData = new FormData();
+        formData.append('avatar', fileInput.files[0]);
+
+        fetch('http://127.0.0.1:8000/api/updateAvatar',{
+            method: 'POST',
+            body: fileInput,
+            credentials: 'include',
+        }).then(async response => {
+            const data = await response.json();
+
+            if (!response.ok) {
+                console.error('Ошибка сервера:', data);
+                alert(data.message || 'Ошибка регистрации');
+                return;
+            }
+
+            console.log('Ответ сервера:', data);
+
+        })
+        .catch(err => console.error('Ошибка:', err));
+    })
+
 });
