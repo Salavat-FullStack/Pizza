@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         fetch('http://127.0.0.1:8000/api/updateAvatar',{
             method: 'POST',
-            body: fileInput,
+            body: formData,
             credentials: 'include',
         }).then(async response => {
             const data = await response.json();
