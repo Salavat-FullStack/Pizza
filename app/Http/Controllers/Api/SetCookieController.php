@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class SetCookieController extends Controller
 {
-        public function setCookie(Request $request){
+    public function setCookie(Request $request){
         // $token = $request->input('token');
 
         // dd($token);
 
-        return response()->json([
-            'request' => $request
-        ]);
+        // return response()->json([
+        //     'request' => $request
+        // ]);
 
         $avatarUrl = $request->input('tokenValue');
         $tokenName = $request->input('tokenSetName');

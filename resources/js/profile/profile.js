@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         fetch('http://127.0.0.1:8000/api/updateAvatar',{
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: formData,
             credentials: 'include',
         }).then(async response => {
