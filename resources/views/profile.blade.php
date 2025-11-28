@@ -29,6 +29,8 @@
             <input type="file" name="avatar" id="avatar">
             <button id="avatarFormBtn">Загрузить</button>
         </div>
+
+        {{-- <img src="{{ asset() }}" alt=""> --}}
     </div>
 </body>
 </html>

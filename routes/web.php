@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\PizzaController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterPizzaController;
+use App\Http\Controllers\SetCookieController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index']);
@@ -19,13 +20,13 @@ Route::get('/login',function () {
     return view('auth.login');
 })->name('login');
 
-Route::post('/set-cookie', function (\Illuminate\Http\Request $request) {
-    $token = $request->input('token');
-    $user = $request->input('user');
+// Route::post('/set-cookie', function (\Illuminate\Http\Request $request) {
+//     $token = $request->input('token');
+//     $user = $request->input('user');
 
-    return response()->json(['message' => 'Cookie установлена'])
-        ->cookie('authToken', $token, 60 * 24 * 30, '/', null, false, true);
-});
+//     return response()->json(['message' => 'Cookie установлена'])
+//         ->cookie('authToken', $token, 60 * 24 * 30, '/', null, false, true);
+// });
 
 // Route::middleware('check.auth.token')->group(function () {
 //     Route::get('/registr-pizza', function () {

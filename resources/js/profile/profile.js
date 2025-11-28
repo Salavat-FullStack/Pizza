@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () =>{
             }
 
             console.log('Ответ сервера:', data);
-
         })
         .catch(err => console.error('Ошибка:', err));
     })

@@ -12,6 +12,10 @@ class ProfileController extends Controller
         }else{
             $loggedUser = false;
         }
+        // $avatar = $request->cookie();
+
+        // dd($avatar);
+
         return view('profile', ['loggedUser' => $loggedUser]);
     }
 }
