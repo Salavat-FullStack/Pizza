@@ -16,12 +16,14 @@ class SetCookieController extends Controller
         //     'request' => $request
         // ]);
 
-        $avatarUrl = $request->input('tokenValue');
-        $tokenName = $request->input('tokenSetName');
+        $tokenValue = $request->input('tokenValue');
+        $tokenName = $request->input('tokenName');
+
+        $tokenValue = base64_encode($tokenValue);
 
         return response()->json([
             'message' => 'Кука установлена'
-        ])->cookie($tokenName, $avatarUrl, 60 * 24 * 30, '/', null, false, true);
+        ])->cookie($tokenName, $tokenValue, 60 * 24 * 30, '/', null, false, true);
 
     }
 }

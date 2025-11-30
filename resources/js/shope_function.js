@@ -73,11 +73,11 @@ export async function loginUser(formData) {
         }
 
         // Отправляем полученные данные (user + token) на монолит
-        await fetch('http://127.0.0.1:8001/set-cookie', {
+        await fetch('http://127.0.0.1:8001/api/set-cookie', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include', // важно для установки cookie
-            body: JSON.stringify({ token: data.token })
+            body: JSON.stringify(data)
         });
 
     } catch (err) {

@@ -35,9 +35,6 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         fetch('http://127.0.0.1:8000/api/updateAvatar',{
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: formData,
             credentials: 'include',
         }).then(async response => {
@@ -48,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () =>{
                 alert(data.message || 'Ошибка регистрации');
                 return;
             }
+
+            await fetch('http://127.0.0.1:8001/api/set-cookie', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include', // важно для установки cookie
+                body: JSON.stringify(data)
+            });
 
             console.log('Ответ сервера:', data);
         })
