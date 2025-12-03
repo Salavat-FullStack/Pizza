@@ -15,13 +15,12 @@ class ProfileController extends Controller
         $data = $request->cookie();
 
         $avatarUrl = base64_decode($data['avatarUrl']);
-        $userData = base64_decode($data['userData']);
-
-        dd($data);
+        $userData = base64_decode($data['UserData']);
 
         return view('profile', [
             'loggedUser' => $loggedUser,
-            
+            'avatarUrl' => $avatarUrl,
+            'userData' => $userData
         ]);
     }
 }

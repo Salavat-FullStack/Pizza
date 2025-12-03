@@ -23,14 +23,12 @@
     <div class="main_container">
         @include('partials.nav', ['type' => 'register_pizza'])
 
-            {{-- @csrf --}}
-
         <div class="form_avatar">
             <input type="file" name="avatar" id="avatar">
             <button id="avatarFormBtn">Загрузить</button>
         </div>
 
-        {{-- <img src="{{ asset() }}" alt=""> --}}
+        <img src="{{ 'http://127.0.0.1:8000' . $avatarUrl }}" alt="avatar">
     </div>
 </body>
 </html>

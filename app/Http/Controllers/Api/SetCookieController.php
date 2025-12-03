@@ -19,7 +19,13 @@ class SetCookieController extends Controller
         $tokenValue = $request->input('tokenValue');
         $tokenName = $request->input('tokenName');
 
-        $tokenValue = base64_encode($tokenValue);
+        if($tokenName !== 'authToken'){
+            if (is_array($tokenValue) || is_object($tokenValue)) {
+                $tokenValue = json_encode($tokenValue, JSON_UNESCAPED_UNICODE);
+            }
+
+            $tokenValue = base64_encode($tokenValue);
+        }
 
         return response()->json([
             'message' => 'Кука установлена'

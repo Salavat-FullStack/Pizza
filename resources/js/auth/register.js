@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formData[input.id] = input.value;
             console.log(formData[input.id]);
         });
-        fetch('http://127.0.0.1:8000/register', {
+        fetch('http://127.0.0.1:8000/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,12 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             console.log('Ответ сервера:', data);
 
-            if (data.token) { 
+            if (data.token) {
                 localStorage.setItem('authToken', data.token);
             }
         })
         .catch(err => console.error('Ошибка:', err));
     });
-
-
 });
