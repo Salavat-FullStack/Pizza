@@ -1,3 +1,31 @@
 .nav_panel{
     display: none;
 }
+
+.avatar{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #D9D9D9;
+    border-radius: 15px;
+    padding: 10px;
+}
+.avatar img{
+    height: 100%;
+}
+
+.profile_block{
+    display: flex;
+    margin-top: 60px;
+}
+
+.avatar_no_url{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+}

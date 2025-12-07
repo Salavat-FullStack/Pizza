@@ -23,12 +23,38 @@
     <div class="main_container">
         @include('partials.nav', ['type' => 'register_pizza'])
 
-        <div class="form_avatar">
-            <input type="file" name="avatar" id="avatar">
-            <button id="avatarFormBtn">Загрузить</button>
+        <div class="profile_block">
+
+            @if ($avatarUrl)
+                <div class="avatar">
+                    <img src="{{ 'http://127.0.0.1:8000' . $avatarUrl }}" alt="avatar">
+                </div>
+
+                {{-- <div class="form_avatar">
+                    <input type="file" name="avatar" id="avatar">
+                </div>
+
+                <button id="avatarFormBtn">Загрузить</button> --}}
+            @else  
+                <div class="avatar avatar_no_url">
+                    
+                </div>           
+                {{-- <div class="form_avatar">
+                    <input type="file" name="avatar" id="avatar">
+                </div>
+
+                <button id="avatarFormBtn">Загрузить</button> --}}
+            @endif
+
+            <div class="profile_panel">
+                <h1>{{ $userData['name'] }}</h1>
+                <div class="profile_inform">
+                    
+                </div>
+            </div>
+
         </div>
 
-        <img src="{{ 'http://127.0.0.1:8000' . $avatarUrl }}" alt="avatar">
     </div>
 </body>
 </html>
