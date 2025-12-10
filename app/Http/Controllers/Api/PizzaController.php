@@ -87,6 +87,19 @@ class PizzaController extends Controller
             $pizza['finelWeight'] = 0;
             $pizza['price'] = 0;
             $pizza['calories'] = 0;
+            
+
+            foreach($pizza['sizes'] as $size){
+                if($size['name'] == 'средняя'){
+                    $pizza['size'] = $size;
+                }
+            }
+
+            foreach($pizza['thicknesses'] as $item){
+                if(trim($item['thickness']) == 'Тонкое'){
+                    $pizza['finelThicknesses'] = $item;
+                }
+            }
 
             foreach($pizza['ingredients'] as &$el){
                 $el['finelPrice'] = $el['price'] * $el['quantity'];
