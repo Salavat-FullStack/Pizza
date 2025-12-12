@@ -36,7 +36,7 @@
                     
                 </div>           
                 {{-- <div class="form_avatar">
-                    <input type="file" name="avatar" id="avatar">
+                    <input class="file_input" type="file" name="avatar" id="avatar">
                 </div>
 
                 <button id="avatarFormBtn">Загрузить</button> --}}
@@ -75,14 +75,19 @@
                             @endif
                         </div>
 
+                        <div class="modal_right">
 
-
-                        <div class="modal_panel">
-                            <div class="form_avatar">
-                                <input type="file" name="avatar" id="avatar">
+                            <div class="modal_inform">
+                                Файл должен иметь расширение jpeg, png, jpg, webp, gif; если ваш файл не соответствует размерам 350x350, то он будет автоматически изменен.
                             </div>
 
-                            <button id="avatarFormBtn">Сохранить</button>
+                            <div class="modal_panel">
+                                <div class="form_avatar">
+                                    <input class="file_input" type="file" name="avatar" id="avatar">
+                                </div>
+
+                                <button id="avatarFormBtn">Сохранить</button>
+                            </div>
                         </div>
 
                     </div>
