@@ -11,6 +11,8 @@
         'resources/css/nav.css',
         'resources/css/main.css',
         'resources/css/profile/profile.css',
+        'resources/css/profile/change_avatar_modal.css',
+        'resources/js/profile/change_avatar.js'
     ])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +31,6 @@
                 <div class="avatar">
                     <img src="{{ 'http://127.0.0.1:8000' . $avatarUrl }}" alt="avatar">
                 </div>
-
-                {{-- <div class="form_avatar">
-                    <input type="file" name="avatar" id="avatar">
-                </div>
-
-                <button id="avatarFormBtn">Загрузить</button> --}}
             @else  
                 <div class="avatar avatar_no_url">
                     
@@ -49,7 +45,47 @@
             <div class="profile_panel">
                 <h1>{{ $userData['name'] }}</h1>
                 <div class="profile_inform">
-                    
+                    <div class="email_view line">
+                        <h2>Почта :</h2>
+                        <h3>{{ $userData['email'] }}</h3>
+                    </div>
+                    <div class="phone_view line">
+                        <h2>Телефон :</h2>
+                        <h3>{{ $userData['phone'] }}</h3>
+                    </div>
+                    <div class="role_view line">
+                        <h2>Роль :</h2>
+                        <h3>{{ $userData['role'] }}</h3>
+                    </div>
+                </div>
+
+                <div class="change_panel">
+                    <div class="change_avatar change_btn">поменять аватарку</div>
+                    <div class="change_role change_btn">поменять роль</div>
+                </div>
+
+                <div class="avatar_modal">
+                    <div class="avatar_modal_cont">
+
+                        <div class="avatar_modal_img avatar">
+                            @if ($avatarUrl)
+                                <img src="{{ 'http://127.0.0.1:8000' . $avatarUrl }}" alt="avatar">
+                            @else  
+                                <div class="avatar avatar_no_url"></div>  
+                            @endif
+                        </div>
+
+
+
+                        <div class="modal_panel">
+                            <div class="form_avatar">
+                                <input type="file" name="avatar" id="avatar">
+                            </div>
+
+                            <button id="avatarFormBtn">Сохранить</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
